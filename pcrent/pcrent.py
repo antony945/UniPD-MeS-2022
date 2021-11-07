@@ -1,11 +1,11 @@
-# Azienda deve affittare un certo numero di pc secondo certi fabbisogni mensili. Può affittarli per uno, due o tre mesi con i prezzi indicati.
-# Trovare politica di affitto che minimizza il costo complessivo.
-
 #!/usr/bin/env python
 # encoding: utf-8
 
 from pyomo.environ import *
 from pyomo.opt import SolverFactory
+
+# Azienda deve affittare un certo numero di pc secondo certi fabbisogni mensili. Può affittarli per uno, due o tre mesi con i prezzi indicati.
+# Trovare politica di affitto che minimizza il costo complessivo.
 
 # Costo complessivo è dato da prodotto prezzi*numero computer acquistati in mese i per durata j
 def obj_rule(model):

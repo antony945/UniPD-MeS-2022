@@ -1,0 +1,91 @@
+# ==========================================================
+# = Solver Results                                         =
+# ==========================================================
+# ----------------------------------------------------------
+#   Problem Information
+# ----------------------------------------------------------
+Problem: 
+- Name: unknown
+  Lower bound: 14200.0
+  Upper bound: 14200.0
+  Number of objectives: 1
+  Number of constraints: 7
+  Number of variables: 19
+  Number of nonzeros: 33
+  Sense: minimize
+# ----------------------------------------------------------
+#   Solver Information
+# ----------------------------------------------------------
+Solver: 
+- Status: ok
+  Termination condition: optimal
+  Statistics: 
+    Branch and bound: 
+      Number of bounded subproblems: 1
+      Number of created subproblems: 1
+  Error rc: 0
+  Time: 0.003887653350830078
+# ----------------------------------------------------------
+#   Solution Information
+# ----------------------------------------------------------
+Solution: 
+- number of solutions: 0
+  number of solutions displayed: 0
+==========================================================================
+Model unknown
+
+  Variables:
+    x : Size=18, Index=x_index
+        Key                     : Lower : Value : Upper : Fixed : Stale : Domain
+           ('aprile', '1month') :     0 :   0.0 :  None : False : False : NonNegativeIntegers
+          ('aprile', '2months') :     0 :   0.0 :  None : False : False : NonNegativeIntegers
+          ('aprile', '3months') :     0 :   5.0 :  None : False : False : NonNegativeIntegers
+         ('febbraio', '1month') :     0 :   0.0 :  None : False : False : NonNegativeIntegers
+        ('febbraio', '2months') :     0 :   0.0 :  None : False : False : NonNegativeIntegers
+        ('febbraio', '3months') :     0 :   0.0 :  None : False : False : NonNegativeIntegers
+          ('gennaio', '1month') :     0 :   4.0 :  None : False : False : NonNegativeIntegers
+         ('gennaio', '2months') :     0 :   2.0 :  None : False : False : NonNegativeIntegers
+         ('gennaio', '3months') :     0 :   3.0 :  None : False : False : NonNegativeIntegers
+           ('giugno', '1month') :     0 :   0.0 :  None : False : False : NonNegativeIntegers
+          ('giugno', '2months') :     0 :   0.0 :  None : False : False : NonNegativeIntegers
+          ('giugno', '3months') :     0 :   0.0 :  None : False : False : NonNegativeIntegers
+           ('maggio', '1month') :     0 :   1.0 :  None : False : False : NonNegativeIntegers
+          ('maggio', '2months') :     0 :   0.0 :  None : False : False : NonNegativeIntegers
+          ('maggio', '3months') :     0 :   0.0 :  None : False : False : NonNegativeIntegers
+            ('marzo', '1month') :     0 :   0.0 :  None : False : False : NonNegativeIntegers
+           ('marzo', '2months') :     0 :   0.0 :  None : False : False : NonNegativeIntegers
+           ('marzo', '3months') :     0 :   4.0 :  None : False : False : NonNegativeIntegers
+
+  Objectives:
+    obj : Size=1, Index=None, Active=True
+        Key  : Active : Value
+        None :   True : 14200.0
+
+  Constraints:
+    constrs : Size=6
+        Key      : Lower : Body : Upper
+          aprile :   9.0 :  9.0 :  None
+        febbraio :   5.0 :  5.0 :  None
+         gennaio :   9.0 :  9.0 :  None
+          giugno :   5.0 :  5.0 :  None
+          maggio :  10.0 : 10.0 :  None
+           marzo :   7.0 :  7.0 :  None
+==========================================================================
+x[('gennaio', '1month')] = 4.0
+x[('gennaio', '2months')] = 2.0
+x[('gennaio', '3months')] = 3.0
+x[('febbraio', '1month')] = 0.0
+x[('febbraio', '2months')] = 0.0
+x[('febbraio', '3months')] = 0.0
+x[('marzo', '1month')] = 0.0
+x[('marzo', '2months')] = 0.0
+x[('marzo', '3months')] = 4.0
+x[('aprile', '1month')] = 0.0
+x[('aprile', '2months')] = 0.0
+x[('aprile', '3months')] = 5.0
+x[('maggio', '1month')] = 1.0
+x[('maggio', '2months')] = 0.0
+x[('maggio', '3months')] = 0.0
+x[('giugno', '1month')] = 0.0
+x[('giugno', '2months')] = 0.0
+x[('giugno', '3months')] = 0.0

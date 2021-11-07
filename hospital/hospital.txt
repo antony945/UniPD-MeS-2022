@@ -1,0 +1,70 @@
+# ==========================================================
+# = Solver Results                                         =
+# ==========================================================
+# ----------------------------------------------------------
+#   Problem Information
+# ----------------------------------------------------------
+Problem: 
+- Name: unknown
+  Lower bound: 19.0
+  Upper bound: 19.0
+  Number of objectives: 1
+  Number of constraints: 8
+  Number of variables: 8
+  Number of nonzeros: 36
+  Sense: minimize
+# ----------------------------------------------------------
+#   Solver Information
+# ----------------------------------------------------------
+Solver: 
+- Status: ok
+  Termination condition: optimal
+  Statistics: 
+    Branch and bound: 
+      Number of bounded subproblems: 1
+      Number of created subproblems: 1
+  Error rc: 0
+  Time: 0.0036423206329345703
+# ----------------------------------------------------------
+#   Solution Information
+# ----------------------------------------------------------
+Solution: 
+- number of solutions: 0
+  number of solutions displayed: 0
+==========================================================================
+Model unknown
+
+  Variables:
+    x : Size=7, Index=days
+        Key       : Lower : Value : Upper : Fixed : Stale : Domain
+           Friday :     0 :   0.0 :  None : False : False : NonNegativeIntegers
+           Monday :     0 :   3.0 :  None : False : False : NonNegativeIntegers
+         Saturday :     0 :   5.0 :  None : False : False : NonNegativeIntegers
+           Sunday :     0 :   0.0 :  None : False : False : NonNegativeIntegers
+         Thursday :     0 :   3.0 :  None : False : False : NonNegativeIntegers
+          Tuesday :     0 :   2.0 :  None : False : False : NonNegativeIntegers
+        Wednesday :     0 :   6.0 :  None : False : False : NonNegativeIntegers
+
+  Objectives:
+    obj : Size=1, Index=None, Active=True
+        Key  : Active : Value
+        None :   True :  19.0
+
+  Constraints:
+    constrs : Size=7
+        Key       : Lower : Body : Upper
+           Friday :  14.0 : 14.0 :  None
+           Monday :  17.0 : 17.0 :  None
+         Saturday :  16.0 : 16.0 :  None
+           Sunday :  11.0 : 17.0 :  None
+         Thursday :  19.0 : 19.0 :  None
+          Tuesday :  13.0 : 13.0 :  None
+        Wednesday :  15.0 : 16.0 :  None
+==========================================================================
+x[Monday] = 3.0
+x[Tuesday] = 2.0
+x[Wednesday] = 6.0
+x[Thursday] = 3.0
+x[Friday] = 0.0
+x[Saturday] = 5.0
+x[Sunday] = 0.0

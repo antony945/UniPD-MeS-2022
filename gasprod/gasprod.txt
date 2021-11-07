@@ -1,0 +1,55 @@
+# ==========================================================
+# = Solver Results                                         =
+# ==========================================================
+# ----------------------------------------------------------
+#   Problem Information
+# ----------------------------------------------------------
+Problem: 
+- Name: unknown
+  Lower bound: 2300.0
+  Upper bound: 2300.0
+  Number of objectives: 1
+  Number of constraints: 4
+  Number of variables: 3
+  Number of nonzeros: 6
+  Sense: maximize
+# ----------------------------------------------------------
+#   Solver Information
+# ----------------------------------------------------------
+Solver: 
+- Status: ok
+  Termination condition: optimal
+  Statistics: 
+    Branch and bound: 
+      Number of bounded subproblems: 0
+      Number of created subproblems: 0
+  Error rc: 0
+  Time: 0.0036954879760742188
+# ----------------------------------------------------------
+#   Solution Information
+# ----------------------------------------------------------
+Solution: 
+- number of solutions: 0
+  number of solutions displayed: 0
+Model unknown
+
+  Variables:
+    x : Size=2, Index=products
+        Key      : Lower : Value : Upper : Fixed : Stale : Domain
+        chloride :     0 :  30.0 :  None : False : False : NonNegativeReals
+             gas :     0 :  20.0 :  None : False : False : NonNegativeReals
+
+  Objectives:
+    obj : Size=1, Index=None, Active=True
+        Key  : Active : Value
+        None :   True : 2300.0
+
+  Constraints:
+    constrs : Size=3
+        Key      : Lower : Body  : Upper
+        chlorine :  None :  30.0 :  40.0
+        hydrogen :  None : 180.0 : 180.0
+        nitrogen :  None :  50.0 :  50.0
+==================================================================================
+x[gas] = 20.0
+x[chloride] = 30.0

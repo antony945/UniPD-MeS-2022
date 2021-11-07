@@ -1,0 +1,7 @@
+# data in AMPL format
+
+set months := gennaio febbraio marzo aprile maggio giugno ;
+set duration := 1month 2months 3months ;
+
+param demand := gennaio 9 febbraio 5 marzo 7 aprile 9 maggio 10 giugno 5 ;
+param prices := 1month 400 2months 700 3months 900 ;

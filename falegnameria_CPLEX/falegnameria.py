@@ -1,3 +1,6 @@
+#!/usr/bin/python
+# encoding: utf-8
+
 # falegnameria costruisce due tipi di porte, standard e lusso
 # con le seguenti caratteristiche:
 
@@ -23,10 +26,7 @@ WEEK_WORK = 40
 from pyomo.environ import *
 from pyomo.opt import SolverFactory
 
-def c2_rule(model, p):
-    return model.x[p] <= model.prod_max[p]
-
-def c3_rule(model, f):
+def c2_rule(model, f):
     return sum(model.tempo[p,f]*model.x[p] for p in model.porte) <= WEEK_WORK*model.operai[f]
 
 def buildmodel():
@@ -41,25 +41,20 @@ def buildmodel():
     model.tempo = Param(model.porte, model.fasi, initialize=lambda model,d,p:tempo[d][p])
     model.WEEK_WORK = Param(initialize=40)
     # Var
-    model.x = Var(model.porte, domain=NonNegativeIntegers)
+    model.x = Var(model.porte, domain=NonNegativeIntegers, bounds=lambda model,p:(0,model.prod_max[p]))
     # Obj
     model.obj = Objective(expr=sum(model.ricavo[p]*model.x[p] for p in model.porte), sense=maximize)
     # Constraints
     model.c1 = Constraint(expr=model.x["lusso"] <= 1/2*sum(model.x[p] for p in model.porte))
-    model.c2 = Constraint(model.porte, rule=c2_rule)
-    model.c3 = Constraint(model.fasi, rule=c3_rule)
+    model.c2 = Constraint(model.fasi, rule=c2_rule)
     return model
 
 if __name__ == '__main__':
     model = buildmodel()
-    opt = SolverFactory('cplex_persistent')
-    opt.set_instance(model)
-    res = opt.solve(tee=True)
-    # opt = SolverFactory('glpk')
-    # res = opt.solve(model)
-    # res.write()
-    print("====================================================================")
-    model.display()
-    print("====================================================================")
+    # opt = SolverFactory('cplex_persistent')
+    # opt.set_instance(model)
+    # res = opt.solve(tee=False)
+    opt = SolverFactory('glpk')
+    res = opt.solve(model)
     for p in model.x:
         print("x[{}] = {}".format(p, value(model.x[p])))

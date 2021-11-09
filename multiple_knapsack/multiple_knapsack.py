@@ -1,13 +1,6 @@
 #!/usr/bin/env python
 # encoding: utf-8
 
-# si considerino 7 oggetti con pesi e profitti dati in tabella
-# e si abbiano a dispoizione tre contenitori uguali di capacità 884
-# Massimizzre profitto di oggetti scelti
-
-# w 500 396 195 660 600 195 660 weight
-# p 294 93 96 155 294 96 155 profitti
-
 from pyomo.environ import *
 from pyomo.opt import SolverFactory
 

@@ -50,7 +50,7 @@ if __name__ == '__main__':
     model = buildmodel()
     opt = SolverFactory('cplex_persistent')
     opt.set_instance(model)
-    opt.write("multiple_knapsack.lp")
+    opt.write("CPLEX_multiple_knapsack.lp")
     res = opt.solve(tee=False)
     model.display()
     print("=====================================================")

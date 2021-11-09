@@ -1,18 +1,6 @@
 #!/usr/bin/python
 # encoding: utf-8
 
-# falegnameria costruisce due tipi di porte, standard e lusso
-# con le seguenti caratteristiche:
-
-# tipo | assemb | vernic | prod.max | ricavo
-# standard | 2h | 3h | 500 | € 300
-# lusso | 4h | 5h | 300 | €400
-
-# Si hanno a disposizione 20 operai all'assemblaggio e 30
-# alla verniciatura e ciascuna presta 40 ore di lavoro alla settimana.
-# Determinare produzione settimanale di porte che massimizza il ricavo,
-# tenendo conto che le porte di lusso non devono superare la metà della produzione
-
 porte = ["standard", "lusso"]
 fasi = ["assemblaggio", "verniciatura"]
 

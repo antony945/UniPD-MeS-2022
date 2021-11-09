@@ -1,0 +1,16 @@
+# data in AMPL format
+
+set products := gas chloride ;
+set components := nitrogen hydrogen chlorine ;
+
+param demand :=
+gas nitrogen 1
+gas hydrogen 3
+gas chlorine 0
+chloride nitrogen 1
+chloride hydrogen 4
+chloride chlorine 1
+;
+
+param profit :=  gas 40 chloride 50 ;
+param stock := nitrogen 50 hydrogen 180 chlorine 40 ;

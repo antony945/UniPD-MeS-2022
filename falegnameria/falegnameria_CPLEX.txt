@@ -1,0 +1,24 @@
+Model unknown
+
+  Variables:
+    x : Size=2, Index=porte
+        Key      : Lower : Value : Upper : Fixed : Stale : Domain
+           lusso :     0 :   0.0 :   300 : False : False : NonNegativeIntegers
+        standard :     0 : 400.0 :   500 : False : False : NonNegativeIntegers
+
+  Objectives:
+    obj : Size=1, Index=None, Active=True
+        Key  : Active : Value
+        None :   True : 120000.0
+
+  Constraints:
+    c1 : Size=1
+        Key  : Lower : Body   : Upper
+        None :  None : -200.0 :   0.0
+    c2 : Size=2
+        Key          : Lower : Body   : Upper
+        assemblaggio :  None :  800.0 :  800.0
+        verniciatura :  None : 1200.0 : 1200.0
+=====================================================
+x[standard] = 400.0
+x[lusso] = 0.0

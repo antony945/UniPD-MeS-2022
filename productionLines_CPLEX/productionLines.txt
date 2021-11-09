@@ -1,0 +1,63 @@
+Version identifier: 20.1.0.0 | 2020-11-10 | 9bedb6d68
+CPXPARAM_Read_DataCheck                          1
+Found incumbent of value 0.000000 after 0.00 sec. (0.00 ticks)
+Tried aggregator 1 time.
+MIQP Presolve eliminated 2 rows and 0 columns.
+Reduced MIQP has 1 rows, 3 columns, and 3 nonzeros.
+Reduced MIQP has 0 binaries, 3 generals, 0 SOSs, and 0 indicators.
+Reduced MIQP objective Q matrix has 3 nonzeros.
+Presolve time = 0.00 sec. (0.00 ticks)
+Tried aggregator 1 time.
+Reduced MIQP has 1 rows, 3 columns, and 3 nonzeros.
+Reduced MIQP has 0 binaries, 3 generals, 0 SOSs, and 0 indicators.
+Reduced MIQP objective Q matrix has 3 nonzeros.
+Presolve time = 0.00 sec. (0.00 ticks)
+Classifier predicts products in MIQP should be linearized.
+MIP emphasis: balance optimality and feasibility.
+MIP search method: dynamic search.
+Parallel mode: deterministic, using up to 2 threads.
+Root relaxation solution time = 0.00 sec. (0.02 ticks)
+
+        Nodes                                         Cuts/
+   Node  Left     Objective  IInf  Best Integer    Best Bound    ItCnt     Gap
+
+*     0+    0                            0.0000    51200.0000              --- 
+      0     0      151.7639     3        0.0000      151.7639       15     --- 
+*     0+    0                          113.0000      151.7639            34.30%
+*     0+    0                          137.0000      151.7639            10.78%
+      0     0        cutoff            137.0000                     16     --- 
+Elapsed time = 0.01 sec. (0.04 ticks, tree = 0.01 MB, solutions = 3)
+
+Root node processing (before b&c):
+  Real time             =    0.01 sec. (0.04 ticks)
+Parallel b&c, 2 threads:
+  Real time             =    0.00 sec. (0.00 ticks)
+  Sync time (average)   =    0.00 sec.
+  Wait time (average)   =    0.00 sec.
+                          ------------
+Total (root+branch&cut) =    0.01 sec. (0.04 ticks)
+====================================================================
+Model unknown
+
+  Variables:
+    x : Size=3, Index=productionLines
+        Key : Lower : Value : Upper : Fixed : Stale : Domain
+          1 :     0 :   1.0 :  None : False : False : NonNegativeIntegers
+          2 :     0 :   2.0 :  None : False : False : NonNegativeIntegers
+          3 :     0 :   1.0 :  None : False : False : NonNegativeIntegers
+
+  Objectives:
+    obj : Size=1, Index=None, Active=True
+        Key  : Active : Value
+        None :   True : 137.0
+
+  Constraints:
+    constrs : Size=3
+        Key : Lower : Body : Upper
+          A :  None : 13.0 : 2000.0
+          B :  None : 13.0 : 3000.0
+          C :  None : 13.0 :  600.0
+====================================================================
+x[1] = 1.0
+x[2] = 2.0
+x[3] = 1.0

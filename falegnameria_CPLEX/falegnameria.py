@@ -55,5 +55,8 @@ if __name__ == '__main__':
     opt = SolverFactory('cplex_persistent')
     opt.set_instance(model)
     res = opt.solve(tee=True)
-    print("===============================================================")
+    print("====================================================================")
     model.display()
+    print("====================================================================")
+    for p in model.x:
+        print("x[{}] = {}".format(p, value(model.x[p])))

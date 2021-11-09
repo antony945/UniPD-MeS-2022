@@ -1,0 +1,94 @@
+# ==========================================================
+# = Solver Results                                         =
+# ==========================================================
+# ----------------------------------------------------------
+#   Problem Information
+# ----------------------------------------------------------
+Problem: 
+- Name: unknown
+  Lower bound: 604000.0
+  Upper bound: 604000.0
+  Number of objectives: 1
+  Number of constraints: 10
+  Number of variables: 13
+  Number of nonzeros: 27
+  Sense: maximize
+# ----------------------------------------------------------
+#   Solver Information
+# ----------------------------------------------------------
+Solver: 
+- Status: ok
+  Termination condition: optimal
+  Statistics: 
+    Branch and bound: 
+      Number of bounded subproblems: 1
+      Number of created subproblems: 1
+  Error rc: 0
+  Time: 0.0034329891204833984
+# ----------------------------------------------------------
+#   Solution Information
+# ----------------------------------------------------------
+Solution: 
+- number of solutions: 0
+  number of solutions displayed: 0
+====================================================================
+Model unknown
+
+  Variables:
+    executors : Size=4, Index=weeks
+        Key : Lower : Value  : Upper : Fixed : Stale : Domain
+          1 :     0 :    0.0 :  None : False : False : NonNegativeIntegers
+          2 :     0 :    0.0 :  None : False : False : NonNegativeIntegers
+          3 :     0 :    0.0 :  None : False : False : NonNegativeIntegers
+          4 :     0 : 2560.0 :  None : False : False : NonNegativeIntegers
+    teachers : Size=4, Index=weeks
+        Key : Lower : Value : Upper : Fixed : Stale : Domain
+          1 :     0 :  40.0 :  None : False : False : NonNegativeIntegers
+          2 :     0 : 160.0 :  None : False : False : NonNegativeIntegers
+          3 :     0 : 640.0 :  None : False : False : NonNegativeIntegers
+          4 :     0 :   0.0 :  None : False : False : NonNegativeIntegers
+    apprentices : Size=4, Index=weeks
+        Key : Lower : Value  : Upper : Fixed : Stale : Domain
+          1 :     0 :  120.0 :  None : False : False : NonNegativeIntegers
+          2 :     0 :  480.0 :  None : False : False : NonNegativeIntegers
+          3 :     0 : 1920.0 :  None : False : False : NonNegativeIntegers
+          4 :     0 :    0.0 :  None : False : False : NonNegativeIntegers
+
+  Objectives:
+    obj : Size=1, Index=None, Active=True
+        Key  : Active : Value
+        None :   True : 604000.0
+
+  Constraints:
+    c1 : Size=1
+        Key  : Lower   : Body     : Upper
+        None : 20000.0 : 128000.0 :  None
+    c2 : Size=4
+        Key : Lower : Body : Upper
+          1 :  None :  0.0 :   0.0
+          2 :  None :  0.0 :   0.0
+          3 :  None :  0.0 :   0.0
+          4 :  None :  0.0 :   0.0
+    c3 : Size=4
+        Key : Lower : Body : Upper
+          1 :  40.0 : 40.0 :  40.0
+          2 :   0.0 :  0.0 :   0.0
+          3 :   0.0 :  0.0 :   0.0
+          4 :   0.0 :  0.0 :   0.0
+====================================================================
+executors[week1] = 0.0
+teachers[week1] = 40.0
+apprentices[week1] = 120.0
+----------------------------------------------------------------
+executors[week2] = 0.0
+teachers[week2] = 160.0
+apprentices[week2] = 480.0
+----------------------------------------------------------------
+executors[week3] = 0.0
+teachers[week3] = 640.0
+apprentices[week3] = 1920.0
+----------------------------------------------------------------
+executors[week4] = 2560.0
+teachers[week4] = 0.0
+apprentices[week4] = 0.0
+----------------------------------------------------------------

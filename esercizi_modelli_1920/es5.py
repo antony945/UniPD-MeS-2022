@@ -31,6 +31,10 @@ def buildModel():
     model.invested = Var(model.months, domain = NonNegativeIntegers)
     model.earned = Var(model.months, domain = NonNegativeReals)
     model.capital = Var(model.months, domain = NonNegativeReals)
+    model.y = Var(model.investments, model.months, domain = Binary)
+    # y is 1 if x > 0, 0 if x = 0
+    model.y_cst1 = Constraint(model.investments, model.months, rule=lambda model,i,j:model.x[i,j] <= 1E8*model.y[i,j])
+    model.y_cst2 = Constraint(model.investments, model.months, rule=lambda model,i,j:model.x[i,j] >= model.y[i,j])
     # variables constraints
     model.invested_cst = Constraint(model.months, rule=lambda model,j:model.invested[j] == 1000*sum(model.x[i,j] for i in model.investments))
     model.earned_cst_April = Constraint(expr = model.earned["Aprile"] == sum((1+model.efficiency[i])*1000*model.x[i,"Aprile"] for i in model.investments if model.duration[i]==1))
@@ -54,6 +58,19 @@ def buildModel():
     model.budget_cst = Constraint(model.months, rule=lambda model,j:model.invested[j] <= model.capital[j])
     # reaching goal constraint
     model.goal_cst = Constraint(expr = model.capital["Luglio"] - model.invested["Luglio"] + model.earned["Luglio"] >= model.GOAL)
+    # not possible to invest at the same time on B and C in may
+    model.may_cst = Constraint(expr = model.y["B","Maggio"]+model.y["C","Maggio"] <= 1)
+    # in order to invest in A in april, you must invest 10k on B (c1) and 30k on D (c2) in april
+    model.c1 = Var(domain = Boolean)
+    model.c1_cst1 = Constraint(expr = model.x["B","Aprile"] <= (10-1) + 1E8*model.c1)
+    model.c1_cst2 = Constraint(expr = model.x["B","Aprile"] >= 10*model.c1)
+    model.c2 = Var(domain = Boolean)
+    model.c2_cst1 = Constraint(expr = model.x["D","Aprile"] <= (30-1) + 1E8*model.c2)
+    model.c2_cst2 = Constraint(expr = model.x["D","Aprile"] >= 30*model.c2)
+    # yA_April is c1 && c2
+    model.and_cst1 = Constraint(expr = model.y["A","Aprile"] <= model.c1)
+    model.and_cst2 = Constraint(expr = model.y["A","Aprile"] <= model.c2)
+    model.and_cst3 = Constraint(expr = model.y["A","Aprile"] >= model.c1+model.c2-1)
     return model
 
 if __name__ == '__main__':
@@ -63,5 +80,8 @@ if __name__ == '__main__':
     model.display()
     print("====================================================")
     # Print variables
-    for p in model.x:
-        print("x[{}] = {}".format(p, value(model.x[p])))
+    for j in model.months:
+        print("{}\n".format(j))
+        for i in model.investments:
+            print("\tInvested in {} = €{}k".format(i, value(model.x[i,j])))
+    print("FINAL BUDGET= €{}".format(value(model.goal_cst)))
